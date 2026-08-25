@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/triboo_web_public/sw.js', { scope: '/triboo_web_public/' })})}

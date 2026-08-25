@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Triboo - your tribe, sorted</title>
+    <meta name="description" content="Family stuff without the chaos: todos, shopping, money, plans." />
+
+    <!-- Link previews (Slack, iMessage, X, ...). og:image must be an absolute
+         URL - crawlers fetch it directly, they don't resolve it against the
+         page. Regenerate the image with `npm run og-image` if the brand
+         color, wordmark, or tagline change. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Triboo" />
+    <meta property="og:title" content="Triboo - your tribe, sorted" />
+    <meta property="og:description" content="Family stuff without the chaos: todos, shopping, money, plans." />
+    <meta property="og:url" content="https://milszym.github.io/triboo_web_public/" />
+    <meta property="og:image" content="https://milszym.github.io/triboo_web_public/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Triboo tribe mark - three huddled circles on leaf green - next to the Triboo wordmark and the tagline 'your tribe, sorted'." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Triboo - your tribe, sorted" />
+    <meta name="twitter:description" content="Family stuff without the chaos: todos, shopping, money, plans." />
+    <meta name="twitter:image" content="https://milszym.github.io/triboo_web_public/og-image.png" />
+
+    <!-- Status bar follows the active theme -->
+    <meta name="theme-color" content="#f6f3e9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191d18" media="(prefers-color-scheme: dark)" />
+
+    <!-- iOS ignores most of the manifest, so it gets its own tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Triboo" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/triboo_web_public/apple-touch-icon-180x180.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/triboo_web_public/favicon.svg" />
+
+    <!-- Figtree: a geometric humanist sans that reads cheerful and open without
+         tipping into a kids' app. display=swap so text paints immediately, and
+         the service worker caches it for offline runs. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap"
+    />
+
+    <!-- Paint the right background before React boots, so there's no white flash in dark mode -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('triboo:theme')
+          var mode =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          document.documentElement.dataset.theme = mode
+        } catch (_) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="/triboo_web_public/assets/index-HijwylJ0.js"></script>
+    <link rel="stylesheet" crossorigin href="/triboo_web_public/assets/index-BcV7WSI6.css">
+  <link rel="manifest" href="/triboo_web_public/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/triboo_web_public/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
